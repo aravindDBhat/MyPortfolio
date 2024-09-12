@@ -71,22 +71,15 @@ function Contact() {
     console.log(parameters);
     if (val) {
       console.log("hjgyjgvyfuygv");
-      emailjs
-        .send(
-          "service_lxkzucl",
-          "template_oyxxt8x",
-          parameters,
-          "T6KTFo2IueF05vhNa"
-        )
-        .then(
-          (result) => {
-            setError("Mail sent successfully");
-          },
-          (err) => {
-            console.log(err);
-            setError(err.message);
-          }
-        );
+      emailjs.send("serviceid", "templeteid", parameters, "publickey").then(
+        (result) => {
+          setError("Mail sent successfully");
+        },
+        (err) => {
+          console.log(err);
+          setError(err.message);
+        }
+      );
       setEmail("");
       setLname("");
       setFname("");
